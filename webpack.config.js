@@ -15,8 +15,6 @@ module.exports = {
     devtool: 'eval-source-map',
     entry: {
         index: './src/index.js',
-        // design: './src/design.js',
-        points: './src/points.js'
     },
     output: {
         filename: './js/[name]_[hash:5].js',
@@ -112,16 +110,6 @@ module.exports = {
             template: './public/index.html',
             filename: 'index.html',
             chunks: ['vendor', 'index']
-        }),
-        // new HtmlWebpackPlugin({
-        //     template: './public/cesium.html',
-        //     filename: 'design.html',
-        //     chunks: ['vendor', 'design']
-        // }),
-        new HtmlWebpackPlugin({
-            template: './public/points.html',
-            filename: 'points.html',
-            chunks: ['vendor', 'points']
         }),
         new MiniCssExtract({
             filename: './css/[name].css',
