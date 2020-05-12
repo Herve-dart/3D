@@ -15,6 +15,7 @@ module.exports = {
     devtool: 'eval-source-map',
     entry: {
         index: './src/index.js',
+        shader: './src/shader.js'
     },
     output: {
         filename: './js/[name]_[hash:5].js',
@@ -110,6 +111,11 @@ module.exports = {
             template: './public/index.html',
             filename: 'index.html',
             chunks: ['vendor', 'index']
+        }),
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: 'shader.html',
+            chunks: ['vendor', 'shader']
         }),
         new MiniCssExtract({
             filename: './css/[name].css',
